@@ -38,7 +38,7 @@ class Application(Frame):
 		self.text.grid(row=2,column=1,columnspan=2,sticky=W)
 
 	def reveal(self):
-		content=self.password.get()
+		content = self.password.get()
 		if content == "1234":
 			message = "Won"
 			self.image()
@@ -101,29 +101,33 @@ class Application(Frame):
                 cv2.line(crop_img,start,end,[0,255,0],2)
         #cv2.circle(crop_img,far,5,[0,0,255],-1)
     			if count_defects == 1:
-        			cv2.putText(img,"I am Shoaib", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
-                    print "1"
+					_str = "Lights Turned ON!"
+        			cv2.putText(img, _str, (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+                    print("1")
                     serial_port.write('T000xxxxxx')
                     sleep(0.5)
     			elif count_defects == 2:
-        			str = "Welcome to Gesture Automation"
-        			cv2.putText(img, str, (5,50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
-                    print "2"
+        			_str = "Lights Turned OFF!"
+        			cv2.putText(img, _str, (5,50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+                    print("2")
                     serial_port.write('S000xxxxxx')
                     sleep(0.5)
     			elif count_defects == 3:
-        			cv2.putText(img,"Supriya", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
-                    print "3"
+					_str = "Shoaib"
+        			cv2.putText(img, _str, (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+                    print("3")
                     serial_port.write('I000xxxxxx')
                     sleep(0.5)
     			elif count_defects == 4:
-       				cv2.putText(img,"Hi!!!", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+					_str = "Message Sent!"
+       				cv2.putText(img, _str, (50,50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+					print("4")
                     serial_port.write('D000xxxxxx')
                     sleep(0.5)
                 else:
-        			cv2.putText(img,"Hello World!!!", (50,50),\
+        			cv2.putText(img, "Hello World!!!", (50,50),\
                                 cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
-                    print "Sorry !! Wrong gesture provided !"
+                    print("Sorry !! Wrong gesture provided !")
     #cv2.imshow('drawing', drawing)
     #cv2.imshow('end', crop_img)
     			cv2.imshow('Gesture', img)
