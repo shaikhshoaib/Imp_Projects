@@ -2,3 +2,4 @@ This is a scrapeBot created for MedPro website. It can be replicated across mult
 Here the HCP details are scraped and captured in a file that is given as output.
 HCP Search is based on any combination i.e. name, address, etc. and can include any number of params as input.
 Similar Bot is created to scrape HCO specific details.
+The same concept and Idea was implemented across various projects after the initial release of this build.
