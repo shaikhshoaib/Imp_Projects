@@ -1,3 +1,6 @@
+# Gesture based Device automation system
+# using Image processing 
+# with help of OpenCV library
 
 from Tkinter import *
 import serial
